@@ -1,0 +1,5 @@
+package parser;
+
+public enum LexemeType {
+    PLUS,MINUS,MULTIPLY,DIVIDE,OPEN_BRACKET,CLOSE_BRACKET,VALUE, EOF, POWER
+}
