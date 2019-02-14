@@ -16,7 +16,7 @@ public class Parser {
     }
     public int calculateExpression() {
         System.out.println("Input expression!");
-        int answer = 0;
+        int answer;
         try {
              answer = parseExpression();
         }
@@ -32,6 +32,12 @@ public class Parser {
         }
         catch (ArithmeticException exc) {
             System.out.println("division by zero");
+            clearState();
+            return calculateExpression();
+        }
+        catch (NumberFormatException exc) {
+            System.out.println("Int was too large");
+            clearState();
             return calculateExpression();
         }
         if (lastLexeme.type!=LexemeType.EOF) {
